@@ -83,6 +83,12 @@
 		</dependency>
 		<!-- end RichFaces stuff -->
 
+		<dependency>
+		<groupId>org.primefaces</groupId>
+		<artifactId>primefaces</artifactId>
+		<version>5.0</version>
+		</dependency>
+		
 	</dependencies>
 	<build>
 		<finalName>jsfdemo</finalName>
