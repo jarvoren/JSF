@@ -2,30 +2,29 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" >
   <div>
+  <h:panelGrid columns="1" rendered="#{User.logedIn}">
 	<h:form>
-	  <ul>
-		<li>
-		  <h:commandLink action="home?faces-redirect=true">
-			<h:outputText value="#{msg.linkHome}" />
-		  </h:commandLink>
-		</li>
-		<li>
-		  <h:commandLink action="add?faces-redirect=true">
-			<h:outputText value="#{msg.personAddLabel}" />
-		  </h:commandLink></li>
-		<li>
-		  <h:commandLink action="showPersons?faces-redirect=true">
-			 <h:outputText value="#{msg.personAllLabel}" />
-		  </h:commandLink>
-		</li>
-		<li>
-		  <h:commandLink action="calendar?faces-redirect=true">
-			 <h:outputText value="#{msg.myMessage}" />
-		  </h:commandLink>
-		</li>
-	</ul>
+	  
+	  <p:panelMenu style="width:100%" >
+	  
+        <p:submenu label="Opcje">
+            <p:menuitem value="Strona Domowa" action="home?faces-redirect=true" />
+            <p:menuitem value="Rezerwacja Usługi"  action="calendar?faces-redirect=true" icon="ui-icon-calendar"/>
+        
+        </p:submenu>
+        <p:submenu rendered="#{User.isAdmin()}" label="Administracja">
+            <p:menuitem value="Dodawanie" action="add?faces-redirect=true" icon="ui-icon-disk" />
+            
+        </p:submenu>
+    	</p:panelMenu>
+		
+		
+		
+	
    </h:form>
+   </h:panelGrid>
   </div>
 </ui:composition>

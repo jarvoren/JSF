@@ -5,12 +5,18 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="templates/default.xhtml">
 	<ui:define name="content">
-	<h:panelGroup rendered="#{!User.logedIn}">
+	
+	<h:panelGrid rendered="#{!User.logedIn}">
 		<p>#{msg.applicationInfo}</p>
 		<h:form>
-		<h:outputText>Username</h:outputText><h:inputText></h:inputText><br></br>
-		<h:outputText>Password</h:outputText><h:inputText></h:inputText>
+		Username<h:inputText value="#{User.name}"></h:inputText><br></br>
+		Password<h:inputSecret value="#{User.password}"></h:inputSecret>
+		<h:commandButton  value="Log In" action="#{DataManager.CheckLogin(User)}"></h:commandButton>
 		</h:form>
-	</h:panelGroup>
+	</h:panelGrid>
+	
+	<h:outputLabel rendered ="#{User.logedIn}">Witaj #{User.name} #{User.surname}</h:outputLabel>
+
+	
 	</ui:define>
 </ui:composition>

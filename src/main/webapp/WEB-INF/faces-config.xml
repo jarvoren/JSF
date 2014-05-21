@@ -6,10 +6,20 @@
       http://java.sun.com/xml/ns/javaee
       http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
 
-<managed-bean>
+	<managed-bean>
 		<managed-bean-name>User</managed-bean-name>
-		<managed-bean-class>com/example/jsfdemo/domain.User</managed-bean-class>
+		<managed-bean-class>com.example.jsfdemo.domain.User</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>input</managed-bean-name>
+		<managed-bean-class>com.example.jsfdemo.domain.Wejscie</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>DataManager</managed-bean-name>
+		<managed-bean-class>com.example.jsfdemo.service.DataManager</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 	<application>
 		<resource-bundle>
