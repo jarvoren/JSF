@@ -13,11 +13,11 @@
         <p:submenu label="Opcje">
             <p:menuitem value="Strona Domowa" action="home?faces-redirect=true" />
             <p:menuitem value="Rezerwacja Usługi"  action="calendar?faces-redirect=true" icon="ui-icon-calendar"/>
-        
+        	<p:menuitem value="Lista Rezerwacji"  action="listReservations?faces-redirect=true" />
         </p:submenu>
-        <p:submenu rendered="#{User.isAdmin()}" label="Administracja">
-            <p:menuitem value="Dodawanie" action="add?faces-redirect=true" icon="ui-icon-disk" />
-            
+        <p:submenu label="Administracja">
+            <p:menuitem rendered="#{User.isAdmin()}" value="Dodawanie" action="add?faces-redirect=true" icon="ui-icon-disk" />
+            <p:menuitem value="Wylogowanie" action="#{User.logOut}" icon="ui-icon-disk" />
         </p:submenu>
     	</p:panelMenu>
 		

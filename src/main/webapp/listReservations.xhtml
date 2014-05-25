@@ -3,32 +3,27 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"  
 	template="templates/default.xhtml">
 	
 	<ui:define name="content">
 	
-	<h:form>
+    <h:form>
     
-     <h:dataTable value="#{DataManager.serviceDb}" var="item">
-      <f:facet name="header">Lista Usług</f:facet>
-      
+     <h:dataTable value="#{DataManager.getUserReservations(User)}" var="item">
+      <f:facet name="header">Lista rezerwacji</f:facet>
       
       <h:column>
-        <f:facet name="header">Nazwa Usługi</f:facet>
-        #{item.name}
+        <f:facet name="header">Nazwa</f:facet>
+        #{item.n}
       </h:column>
       
       <h:column>
-        <f:facet name="header">Rezerwuj Na</f:facet>
-        <p:calendar value="#{Wejscie.inputDate}" />
-        <p:commandButton value="Rezerwuj" action="#{DataManager.reserve(item , Wejscie.inputDate , User )}" />
+        <f:facet name="header">Data</f:facet>
+        #{item.d}
       </h:column>
       
      </h:dataTable>
     </h:form>
- 
- 
       
 	</ui:define>
 	

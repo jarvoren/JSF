@@ -15,8 +15,9 @@
 		</h:form>
 	</h:panelGrid>
 	
-	<h:outputLabel rendered ="#{User.logedIn}">Witaj #{User.name} #{User.surname}</h:outputLabel>
-
+	<h:panelGrid rendered="#{User.logedIn}">
+	<h:outputLabel>Witaj #{User.name} #{User.surname}</h:outputLabel>
+	</h:panelGrid>
 	
 	</ui:define>
 </ui:composition>
